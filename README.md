@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/mina-multistage.png)](http://badge.fury.io/rb/mina-multistage)
+[![Gem Version](https://badge.fury.io/rb/mina-proteus.svg)](https://badge.fury.io/rb/mina-proteus)
 
 # Mina::Proteus
 
