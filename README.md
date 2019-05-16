@@ -28,6 +28,8 @@ $ gem install mina-proteus
 Require `mina/proteus` in your `config/deploy.rb`:
 
 ```rb
+# config/deploy.rb
+
 require 'mina/proteus'
 require 'mina/bundler'
 require 'mina/git'
@@ -46,6 +48,8 @@ end
 You then need to specify your hanami apps like this:
 
 ```rb
+# config/deploy.rb
+
 set :hanami_apps, %w(app1 app2 app3)
 ```
 
@@ -54,11 +58,12 @@ That's the only required parameter, optional parameters are:
 ```rb
 # config/deploy.rb
 
-set :stages, %w(staging production) #specify your stages
-set :stages_dir, 'config/deploy' #specify which directory will have all the configurations files
-set :default_stage, 'staging' #specify your default stage
+set :stages, %w(staging production)   #specify your stages
+set :stages_dir, 'config/deploy'      #specify which directory will have all the configurations files
+set :default_stage, 'staging'         #specify your default stage
 
-set :bundle_prefix, -> { %{HANAMI_ENV="#{fetch(:current_stage)}" HANAMI_APPS="#{fetch(:current_app)}" #{fetch(:bundle_bin)} exec} } #used to deploy a single application in a specific environment
+#this is used to deploy a single application in a specific environment
+set :bundle_prefix, -> { %{HANAMI_ENV="#{fetch(:current_stage)}" HANAMI_APPS="#{fetch(:current_app)}" #{fetch(:bundle_bin)} exec} }
 ```
 
 Then to create every file run:
@@ -74,7 +79,7 @@ Use them to define stage and app specific configuration.
 Now you can deploy the default stage with:
 
 ```shell
-$ mina <APP-NAME> deploy # this deploys staging by default
+$ mina <APP-NAME> deploy # this deploys to :default_stage
 ```
 
 Or specify a stage explicitly:
@@ -85,4 +90,4 @@ $ mina production <APP-NAME> deploy
 ```
 
 ## Maintenance
-I'll be rearely maintaining this gem due to lack of time, if you want to contibute feel free to fork it, branch it and then create a pull request
+I'll be rarely maintaining this gem due to lack of time, if you want to contibute feel free to fork it, branch it and then create a pull request
