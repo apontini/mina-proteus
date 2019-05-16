@@ -84,4 +84,5 @@ $ mina staging <APP-NAME> deploy
 $ mina production <APP-NAME> deploy
 ```
 
-## Contributing
+## Maintenance
+I'll be rearely maintaining this gem due to lack of time, if you want to contibute feel free to fork it, branch it and then create a pull request
