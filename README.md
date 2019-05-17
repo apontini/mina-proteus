@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/mina-proteus.svg)](https://badge.fury.io/rb/mina-proteus)
+[![Gem Version](https://badge.fury.io/rb/mina-proteus.svg)](https://badge.fury.io/rb/mina-proteus)  ![Gem](https://img.shields.io/gem/dt/mina-proteus.svg?color=brightgreen)
 
 # Mina::Proteus
 
