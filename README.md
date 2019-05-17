@@ -2,7 +2,7 @@
 
 # Mina::Proteus
 
-Plugin for Mina that adds support for multiple stages and multiple apps to Mina, specifically built for Hanami ruby framework.
+Plugin for Mina that adds support for multiple stages and multiple apps to Mina, specifically built for [Hanami ruby framework](https://hanamirb.org/).
 This gem is based on [endoze's mina-multistage gem](https://github.com/endoze/mina-multistage), huge thanks to him!
 
 ## Installation & Usage
@@ -65,6 +65,7 @@ set :default_stage, 'staging'         #specify your default stage
 #this is used to deploy a single application in a specific environment
 set :bundle_prefix, -> { %{HANAMI_ENV="#{fetch(:current_stage)}" HANAMI_APPS="#{fetch(:current_app)}" #{fetch(:bundle_bin)} exec} }
 ```
+Note that `current_stage` and `current_app` are respectively the stage and the application being called.
 
 Then to create every file run:
 
