@@ -90,5 +90,6 @@ $ mina staging <APP-NAME> deploy
 $ mina production <APP-NAME> deploy
 ```
 
-## Maintenance
-I'll be rarely maintaining this gem due to lack of time, if you want to contibute feel free to fork it, branch it and then create a pull request
+# Maintenance and Contribution
+I'll be rarely maintaining this source code due to lack of time, but i will do as much as i can to resolve any open issues.
+If you want to contribute, feel free to fork it, branch it and to create a pull request.
