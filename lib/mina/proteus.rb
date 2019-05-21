@@ -65,14 +65,14 @@ fetch(:all_stages).each do |stage_name|
     file = "#{_stages_dir}/#{fetch(:current_stage)}.rb"
     load file
   end
+end
 
-  fetch(:all_apps).each do |app_name|
-    desc "Set the target app to '#{app_name}'."
-    task(app_name) do
-      set :current_app, app_name
-      file = "#{_stages_dir}/#{fetch(:current_stage)}/#{fetch(:current_app)}.rb"
-      load file
-    end
+fetch(:all_apps).each do |app_name|
+  desc "Set the target app to '#{app_name}'."
+  task(app_name) do
+    set :current_app, app_name
+    file = "#{_stages_dir}/#{fetch(:current_stage)}/#{fetch(:current_app)}.rb"
+    load file
   end
 end
 
@@ -83,6 +83,7 @@ if _stage_file_exists?(_potential_stage) && _argument_included_in_stages?(_poten
 elsif _stage_file_exists?(_default_stage)
   invoke _default_stage
 end
+invoke ARGV[1]
 
 namespace :proteus do
   desc 'Create stage and apps files'
