@@ -5,7 +5,7 @@ require 'mina/proteus/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "mina-proteus"
-  spec.version       = Mina::Multistage::VERSION
+  spec.version       = Mina::Proteus::VERSION
   spec.authors       = ["apontini"]
   spec.email         = ["alberto.pontini@gmail.com"]
   spec.description   = %q{Adds multistage and multiapps capabilities to Mina, specifically built for Hanami ruby framework}

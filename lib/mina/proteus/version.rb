@@ -1,5 +1,5 @@
 module Mina
-  module Multistage
-    VERSION = "0.5.1"
+  module Proteus
+    VERSION = "0.5.2"
   end
 end
