@@ -1,4 +1,3 @@
-
 def _default_stage
   fetch(:default_stage, 'staging')
 end
@@ -82,12 +81,8 @@ end
 
 _potential_stage = ARGV.first
 
-if _stage_file_exists?(_potential_stage) && _argument_included_in_stages?(_potential_stage)
-  invoke _potential_stage
-  invoke ARGV[1] if _app_file_in_stage_exists?(_potential_stage, ARGV[1]) && _argument_included_in_apps?(ARGV[1])
-elsif _stage_file_exists?(_default_stage)
+if !_stage_file_exists?(_potential_stage) && _stage_file_exists?(_default_stage)
   invoke _default_stage
-  invoke ARGV[0] if _app_file_in_stage_exists?(_default_stage, ARGV[0]) && _argument_included_in_apps?(ARGV[0])
 end
 
 namespace :proteus do
