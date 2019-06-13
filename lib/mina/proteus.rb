@@ -79,10 +79,14 @@ fetch(:all_apps).each do |app_name|
   end
 end
 
-_potential_stage = ARGV.first
+_potential_stage = ARGV[0]
 
 if !_stage_file_exists?(_potential_stage) && _stage_file_exists?(_default_stage)
+  set :current_app, ARGV[0]
   invoke _default_stage
+else
+  set :current_stage, ARGV[0]
+  set :current_app, ARGV[1]
 end
 
 namespace :proteus do
